@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
                 //Intent startProfileIntent =  new Intent(AuthActivity.this, ProfileActivity.class);
                 //startProfileIntent.putExtra(ProfileActivity.USER_KEY, new User(mLogin.getText().toString(),
                 //        mPassword.getText().toString()));
+                //test
 
                 Intent startView2 = new Intent (MainActivity.this, Activity2.class);
                 startView2.putExtra(Activity2.TEXT_KEY, mMainInput1.getText().toString());
