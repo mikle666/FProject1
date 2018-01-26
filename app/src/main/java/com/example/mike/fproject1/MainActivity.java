@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
                 //        mPassword.getText().toString()));
                 //test
 
+
+
                 Intent startView2 = new Intent (MainActivity.this, Activity2.class);
                 startView2.putExtra(Activity2.TEXT_KEY, mMainInput1.getText().toString());
                 startActivity(startView2);
