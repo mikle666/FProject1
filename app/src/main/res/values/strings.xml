@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Проект 18</string>
     <string name="input_button_main">Вход</string>
-    <string name="input_text_main1">Введите что-то</string>
-    <string name="buttonView02">Кнопка</string>
+    <string name="input_text_main1">Введите что-нибудь</string>
+    <string name="buttonView02">Загуглить!</string>
+    <string name="button_get_data">Get data</string>
 </resources>

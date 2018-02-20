@@ -28,7 +28,7 @@ public class Activity2 extends AppCompatActivity {
         public void onClick(View v) {
             String s1 = "http://www.google.com/search?q=";
             String url01 = s1.concat(mTextView02.getText().toString());
-            showMessage(url01);
+            //showMessage(url01);
             Uri address = Uri.parse(url01);
             Intent openlinkIntent = new Intent(Intent.ACTION_VIEW, address);
             startActivity(openlinkIntent);
@@ -43,10 +43,6 @@ public class Activity2 extends AppCompatActivity {
 
         mTextView02 = findViewById(R.id.tvTextView2);
         mButtonView2 = findViewById(R.id.buttonView2);
-        //mWebView = (WebView) findViewById(R.id.webView);
-        // включаем поддержку JavaScript
-        //mWebView.getSettings().setJavaScriptEnabled(true);
-
 
         Bundle bundle = getIntent().getExtras();
         mTextView02.setText(bundle.getString(TEXT_KEY));
