@@ -14,6 +14,19 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvRequestTime"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Time of request"
+            android:hint="Time of request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
         <TextView
             android:id="@+id/tvBTC"
             android:textSize="20dp"

@@ -17,6 +17,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView mJSONTextETH;
     private TextView mJSONTextBCH;
     private TextView mJSONTextXRP;
+    private TextView mtvRequestTime;
 
     private Button mMainButton1;
 
@@ -73,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     } catch (Exception e){
                         ;
                         mJSONTextBTC.setText(e.toString());
+
                     }
 
             }
@@ -84,10 +88,14 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, string, Toast.LENGTH_LONG).show();
     }
     private void getCoinPairsData(){
+        Date dateNow = new Date();
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("hh:mm:ss");
+
         mJSONTextBTC.setText("BTC:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=BTC_USD", "BTC_USD"));
         mJSONTextETH.setText("ETH:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=ETH_USD", "ETH_USD"));
         mJSONTextBCH.setText("BCH:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=BCH_USD", "BCH_USD"));
         mJSONTextXRP.setText("XRP:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=XRP_USD", "XRP_USD"));
+        mtvRequestTime.setText("Last update at: " + formatForDateNow.format(dateNow));
     }
 
     class UpdateTimeTask extends TimerTask {
@@ -120,12 +128,13 @@ public class MainActivity extends AppCompatActivity {
         mJSONTextETH = findViewById(R.id.tvETH);
         mJSONTextBCH = findViewById(R.id.tvBCH);
         mJSONTextXRP = findViewById(R.id.tvXRP);
+        mtvRequestTime = findViewById(R.id.tvRequestTime);
 
         mMainButton1.setOnClickListener(mMainButton1OnClickListener);
 
         getCoinPairsData();
 
         Timer timer = new Timer();
-        timer.schedule(new UpdateTimeTask(), 0, 2000);
+        timer.schedule(new UpdateTimeTask(), 0, 10000);
       }
 }
