@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/tvRequestTime"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:layout_gravity="center"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"

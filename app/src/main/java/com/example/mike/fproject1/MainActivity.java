@@ -89,13 +89,13 @@ public class MainActivity extends AppCompatActivity {
     }
     private void getCoinPairsData(){
         Date dateNow = new Date();
-        SimpleDateFormat formatForDateNow = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat formatForDateNow = new SimpleDateFormat("HH:mm:ss");
 
         mJSONTextBTC.setText("BTC:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=BTC_USD", "BTC_USD"));
         mJSONTextETH.setText("ETH:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=ETH_USD", "ETH_USD"));
         mJSONTextBCH.setText("BCH:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=BCH_USD", "BCH_USD"));
         mJSONTextXRP.setText("XRP:  " + getJSON("https://api.exmo.me/v1/order_book/?pair=XRP_USD", "XRP_USD"));
-        mtvRequestTime.setText("Last update at: " + formatForDateNow.format(dateNow));
+        mtvRequestTime.setText("time: " + formatForDateNow.format(dateNow));
     }
 
     class UpdateTimeTask extends TimerTask {
